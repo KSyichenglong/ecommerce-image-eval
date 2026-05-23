@@ -6,8 +6,8 @@ Based on 13 years of real-world e-commerce operations experience and validated a
 
 ## Supported Categories
 
-- **Shoes Cabinet (鞋柜)** — v1.5 standard (fully validated)
-- **Cat Villa / Cat Cabinet (猫别墅/猫柜)** — v1.0 standard (migrated from shoes cabinet, pending real-world validation)
+- **Shoes Cabinet (家具)** — v1.5 standard (fully validated)
+- **Cat Villa / Cat Cabinet (宠物)** — v1.0 standard (migrated from shoes cabinet, pending real-world validation)
 
 ## Scoring Dimensions
 
