@@ -1,26 +1,85 @@
-# Ecommerce Image Evaluation Skill
+# Ecommerce Image Eval — 电商主图评估技能
 
-A structured, data-driven scoring framework for evaluating e-commerce product main images (主图) on Chinese marketplaces.
+基于 13 年电商实战经验，提供结构化、数据驱动的主图评分框架。支持鞋柜、猫别墅/猫柜等家居/宠物类目，持续扩展中。
 
-Based on 13 years of real-world e-commerce operations experience and validated against actual sales performance data.
+---
 
-## Supported Categories
+## 快速开始（3 步评分）
 
-- **Shoes Cabinet (家具)** — v1.5 standard (fully validated)
-- **Cat Villa / Cat Cabinet (宠物)** — v1.0 standard (migrated from shoes cabinet, pending real-world validation)
+### 第 1 步：上传你的主图
 
-## Scoring Dimensions
+发送你要评估的产品主图（单张即可，首图优先）。
 
-| Dimension | Weight | Focus |
-|-----------|--------|-------|
-| Prominence (突出) | 35% | Product visibility, color distinction, readability |
-| Differentiation (差异化) | 35% | Unique selling points, visual proof, conversion power |
-| Semantic Interception (语义截流) | 15% | Cognitive pause, competitor conflict, expectation control |
-| Visual Trust (视觉信任) | 15% | Material honesty, scene fit, purchase imagination |
+### 第 2 步：上传竞品环境
 
-## Usage
+发送搜索页截图或至少 1-2 张竞品主图，让 AI 了解当前页面的竞争环境（什么颜色、什么结构是主流）。
 
-This is an [OpenClaw](https://docs.openclaw.ai) AgentSkill. Place the `ecommerce-image-eval` directory in your OpenClaw skills folder.
+> **为什么需要竞品？** 差异的价值 = 独特性 × 可见性。如果页面内 80% 竞品都在用透明门，你的透明门就不是差异，而是标配。
+
+### 第 3 步：填写诊断信息（7 项必填）
+
+复制下面的信息模板，逐项填写后发送：
+
+```
+【主图诊断信息】
+1. 核心卖点（1个）：__________
+2. 核心搜索词：__________（如"鞋柜"/"免安装鞋柜"/"XX品牌鞋柜"）
+3. 产品材质：__________（柜体+门板+框架）
+4. 细分品类：__________（如塑料组装鞋柜/实木猫别墅）
+5. 主图规格 vs 热卖规格：__________（图片展示的尺寸 vs 实际卖得最好的尺寸和价格）
+6. 目标渠道：__________（京东/天猫/拼多多/抖音）
+7. 目标人群 + 产品差异化说明：__________
+```
+
+**注意**：AI 严禁推测任何信息。如果你漏填某项，评分结果会标注「推测项」，可信度降低。
+
+---
+
+### 然后，AI 会自动输出完整评分报告：
+
+1. **竞品环境采集** — 当前搜索页是什么流派、什么颜色主导
+2. **逐项打分**（满分 100）
+   - 维度一：突出（35 分）— 产品占比、色彩区隔、品类信号
+   - 维度二：差异化（35 分）— 差异存在性、可验证性、购买转化力
+   - 维度三：语义截流（15 分）— 认知停顿、冲突制造、预期可控
+   - 维度四：视觉信任（15 分）— 质感诚实、场景适配、购买想象
+3. **总分 / 等级判定**
+   - ≥85 分：爆款级，可直接投产
+   - 75-84 分：优良级，小修可冲 85+
+   - 60-74 分：修改后重验
+   - <60 分：重做
+4. **市场定位结论** — 这张图在当前竞争中扮演什么角色
+5. **核心问题 Top 3** — 最影响转化的 3 个短板
+6. **优化方案（P0/P1/P2）** — 必须改 / 建议改 / 锦上添花
+
+---
+
+## 评分标准文档
+
+| 类目 | 文件 | 状态 |
+|------|------|------|
+| 鞋柜 | `references/鞋柜主图评分标准_v1.5.md` | ✅ 实战验证 |
+| 猫别墅/猫柜 | `references/猫别墅主图评分标准_v1.0.md` | 🔄 迁移版，待实战验证 |
+
+> **标准切换规则**：提到"鞋柜"自动调用鞋柜标准；提到"猫别墅"/"猫柜"自动调用猫别墅标准。你也可以直接说"用鞋柜标准"覆盖自动判断。
+
+---
+
+## 技术说明
+
+这是一个 [OpenClaw](https://docs.openclaw.ai) AgentSkill。安装方式：
+
+1. 下载本仓库或 `releases` 中的 `.skill` 文件
+2. 放入你的 OpenClaw `skills/` 目录
+3. OpenClaw 会自动识别并在对应场景加载
+
+---
+
+## 版本
+
+- **v1.0** — 鞋柜 v1.5 + 猫别墅 v1.0 初始打包
+
+---
 
 ## License
 
